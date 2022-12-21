@@ -1,9 +1,9 @@
-let Distancia = maqueen.Ultrasonic(PingUnit.Centimeters)
+let Distancia = Math.round(maqueen.Ultrasonic(PingUnit.Centimeters))
 pins.digitalWritePin(DigitalPin.P12, 1)
 pins.digitalWritePin(DigitalPin.P8, 1)
-basic.showNumber(Distancia)
+basic.showNumber(3)
 basic.forever(function () {
-    Distancia = maqueen.Ultrasonic(PingUnit.Centimeters)
+    Distancia = Math.round(maqueen.Ultrasonic(PingUnit.Centimeters))
     if (Distancia > 5) {
         if (maqueen.readPatrol(maqueen.Patrol.PatrolLeft) < 255) {
             pins.digitalWritePin(DigitalPin.P8, 1)
